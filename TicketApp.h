@@ -16,7 +16,8 @@ public:
 	TicketApp();
 	~TicketApp();
 
-	AbstractUser* GetUser(string n);
+	StandartUser* GetStaUser(string n);
+	PremiumUser* GetPreUser(string n);
 	Event* GetEvent(string n);
 	Artist* GetArtist(string n);
 

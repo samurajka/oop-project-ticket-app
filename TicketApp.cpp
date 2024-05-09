@@ -4,6 +4,24 @@ TicketApp::TicketApp() {
 
 }
 
+TicketApp::~TicketApp() {
+	int maxU = this->users.size();
+	for (int i = 0; i < maxU; i++) {
+		delete this->users[i];
+	}
+
+	int maxA = this->artists.size();
+	for (int i = 0; i < maxA; i++) {
+		delete this->artists[i];
+	}
+
+	int maxE = this->events.size();
+	for (int i = 0; i < maxE; i++) {
+		delete this->events[i];
+	}
+
+}
+
 void TicketApp::CreateArtist(string n, string g) {
 	this->artists.push_back(new Artist(n, g));
 }
@@ -50,10 +68,19 @@ Event* TicketApp::GetEvent(string n) {
 	return nullptr;
 }
 
-AbstractUser* TicketApp::GetUser(string n) {
+StandartUser* TicketApp::GetStaUser(string n) {
 	for (int i = 0; i < this->users.size(); i++) {
 		if (this->users[i]->GetName() == n) {
-			return this->users[i];
+			return (StandartUser*) this->users[i];
+		}
+	}
+	return nullptr;
+}
+
+PremiumUser* TicketApp::GetPreUser(string n) {
+	for (int i = 0; i < this->users.size(); i++) {
+		if (this->users[i]->GetName() == n) {
+			return (PremiumUser*) this->users[i];
 		}
 	}
 	return nullptr;

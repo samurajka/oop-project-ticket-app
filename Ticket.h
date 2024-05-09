@@ -9,5 +9,7 @@ private:
 public:
 	Ticket(Event* e);
 	void Print();
+	string GetName();
+	Event* GetEvent();
 };
 

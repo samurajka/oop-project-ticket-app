@@ -9,6 +9,7 @@ protected:
 	vector<Ticket*> tickets;
 public:
 	StandartUser(string n);
+	virtual ~StandartUser();
 
 	virtual void BuyTicket(Event* e);
 	virtual void ShowMyTickets();

@@ -5,6 +5,10 @@ Artist::Artist(string name, string genre) {
 	this->genre = genre;
 }
 
+Artist::~Artist() {
+
+}
+
 void Artist::Print() {
 	cout << "name: " + this->name << endl;
 	cout << "genre: " + this->genre << endl;

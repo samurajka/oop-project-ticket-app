@@ -31,9 +31,16 @@ int main() {
 	App->ShowEvents();
 
 	App->CreateStandartUser("Pan Standartni");
-	App->GetUser("Pan Standartni")->BuyTicket(App->GetEvent("Vocaloid Concert"));
-	App->GetUser("Pan Standartni")->ShowMyTickets();
+	App->GetStaUser("Pan Standartni")->BuyTicket(App->GetEvent("Vocaloid Concert"));
+	App->GetStaUser("Pan Standartni")->ShowMyTickets();
 
+	App->CreatePremiumUser("Pani Premiova");
+	App->GetPreUser("Pani Premiova")->BuyTicket(App->GetEvent("Vocaloid Concert"));
+	App->GetPreUser("Pani Premiova")->ShowMyTickets();
+	App->GetPreUser("Pani Premiova")->RefundTicket("Vocaloid Concert");
+	App->GetPreUser("Pani Premiova")->ShowMyTickets();
+
+	delete App;
 
 	return 0;
 }

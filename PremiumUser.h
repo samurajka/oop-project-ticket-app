@@ -6,7 +6,8 @@ class PremiumUser : public StandartUser
 {
 public:
 	PremiumUser(string n);
+	virtual ~PremiumUser();
 
-	void RefundTicket();
+	void RefundTicket(string n);
 };
 

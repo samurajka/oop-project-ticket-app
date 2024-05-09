@@ -8,6 +8,10 @@ Event::Event(string n, Artist* a, string l, int t, int tp) {
 	this->ticketPrice = tp;
 }
 
+Event::~Event() {
+
+}
+
 void Event::ArtistInfo() {
 	this->artist->Print();
 }

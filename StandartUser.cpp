@@ -4,6 +4,13 @@ StandartUser::StandartUser(string n) {
 	this->name = n;
 }
 
+StandartUser::~StandartUser() {
+	int maxT = this->tickets.size();
+	for (int i = 0; i < maxT; i++) {
+		this->tickets[i] = nullptr;
+	}
+}
+
 void StandartUser::BuyTicket(Event* e) {
 	if (e->GetTicketsLeft() > 0) {
 		this->tickets.push_back(new Ticket(e));
