@@ -1,5 +1,7 @@
 #include "TicketApp.h"
 
+int TicketApp::userTotal = 0;
+
 TicketApp::TicketApp() {
 
 }
@@ -32,10 +34,12 @@ void TicketApp::CreateEvent(string n, Artist* a, string l, int t, int tp) {
 
 void TicketApp::CreateStandartUser(string n) {
 	this->users.push_back(new StandartUser(n));
+	TicketApp::userTotal++;
 }
 
 void TicketApp::CreatePremiumUser(string n) {
 	this->users.push_back(new PremiumUser(n));
+	TicketApp::userTotal++;
 }
 
 void TicketApp::ShowEvents() {

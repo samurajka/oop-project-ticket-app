@@ -16,6 +16,22 @@ void PremiumUser::RefundTicket(string n) {
 		if (this->tickets[i]->GetName() == n) {
 			this->tickets[i]->GetEvent()->TicketRefunded();
 			this->tickets.erase(this->tickets.begin() + i);
+			this->totalEventsVisited--;
+			cout << "Ticket refunded" << endl;
 		}
+	}
+	
+}
+
+int PremiumUser::GetTotalEventsVisited() {
+	return this->totalEventsVisited;
+}
+
+void PremiumUser::BuyTicket(Event* e) {
+	if (e->GetTicketsLeft() > 0) {
+		this->tickets.push_back(new Ticket(e));
+		e->TicketSold();
+		this->totalEventsVisited++;
+		cout << "Ticket purchased" << endl;
 	}
 }

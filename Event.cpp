@@ -33,3 +33,8 @@ void Event::TicketRefunded() {
 string Event::GetName() {
 	return this->name;
 }
+
+void Event::Print() {
+	cout << "The event " + this->name + " will take place at " + this->location + " the performing artist is " + this->artist->GetName() << endl;
+	cout << "There are " + to_string(this->ticketsLeft) + " tickets left and the price is " + to_string(this->ticketPrice) + " czk" << endl;
+}

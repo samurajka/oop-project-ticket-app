@@ -15,6 +15,10 @@ void StandartUser::BuyTicket(Event* e) {
 	if (e->GetTicketsLeft() > 0) {
 		this->tickets.push_back(new Ticket(e));
 		e->TicketSold();
+		cout << "Ticket purchased" << endl;
+	}
+	else {
+		cout << "No tickets left" << endl;
 	}
 }
 

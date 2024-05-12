@@ -12,6 +12,7 @@ private:
 	vector<Artist*> artists;
 	vector<AbstractUser*> users;
 
+	static int userTotal;
 public:
 	TicketApp();
 	~TicketApp();

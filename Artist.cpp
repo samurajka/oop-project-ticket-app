@@ -15,7 +15,7 @@ void Artist::Print() {
 	cout << "albums: ";
 	for (int i = 0; i < this->albums.size(); i++) {
 		cout << this->albums[i];
-		if (!i == (this->albums.size() - 1)) {
+		if (i != (this->albums.size() - 1)) {
 			cout << ", ";
 		}
 	}

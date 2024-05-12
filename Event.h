@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Artist.h"
+#include "Printable.h"
 
-class Event
+class Event : public Printable
 {
 private:
 	string name;
@@ -13,6 +14,8 @@ private:
 public:
 	Event(string n, Artist* a, string l, int t,int tp);
 	~Event();
+
+	void Print();
 
 	void ArtistInfo();
 	int GetTicketsLeft();
